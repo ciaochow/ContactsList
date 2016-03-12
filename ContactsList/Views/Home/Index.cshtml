@@ -1,0 +1,31 @@
+﻿
+@model ContactsList.Models.ViewModels.ContactsListVm
+@{
+    ViewBag.Title = "Contacts List";
+}
+<br />
+<br/>
+@if (Model != null)
+{
+    // List all contacts
+    if (@Model.Contacts.Count() > 0)
+    {
+        <div>
+            <h3>Contacts: @Model.Contacts.Count()</h3>
+        </div>
+    }
+
+
+    foreach (var contact in Model.Contacts)
+    {
+        <p>
+            <span>Name: @contact.FirstName</span>
+            <span>Phone: @contact.Phone</span>
+            <span>Email: @contact.Email</span>
+        </p>
+    }
+}
+else
+{
+    <h4>There are currently no contacts.</h4>
+}

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsList.UI", "ContactsList\ContactsList.UI.csproj", "{5B9FE49E-2662-4BE8-988B-2DC9FDA9D9B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsList.Model", "ContactsList.Model\ContactsList.Model.csproj", "{FBDC9E49-EC2D-4463-A4A5-FAB4DCC7793B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsList.Data", "ContactsList.Data\ContactsList.Data.csproj", "{0C58F453-F53A-4720-AF0E-F24EA57E1F4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B9FE49E-2662-4BE8-988B-2DC9FDA9D9B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B9FE49E-2662-4BE8-988B-2DC9FDA9D9B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B9FE49E-2662-4BE8-988B-2DC9FDA9D9B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B9FE49E-2662-4BE8-988B-2DC9FDA9D9B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBDC9E49-EC2D-4463-A4A5-FAB4DCC7793B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBDC9E49-EC2D-4463-A4A5-FAB4DCC7793B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBDC9E49-EC2D-4463-A4A5-FAB4DCC7793B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBDC9E49-EC2D-4463-A4A5-FAB4DCC7793B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C58F453-F53A-4720-AF0E-F24EA57E1F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C58F453-F53A-4720-AF0E-F24EA57E1F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C58F453-F53A-4720-AF0E-F24EA57E1F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C58F453-F53A-4720-AF0E-F24EA57E1F4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
