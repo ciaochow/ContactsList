@@ -16,6 +16,7 @@
         <div>
             <h3>Contacts: @Model.Contacts.Count()</h3>
         </div>
+        <br/>
     }
     if (Model.Contacts.Count == 0)
     {
@@ -23,20 +24,22 @@
     }
     foreach (var contact in Model.Contacts)
     {
-        <p>
-            <span>Name: @contact.FirstName&nbsp;@contact.LastName</span>
-            <span>Phone: @contact.Phone</span>
-            <span>Email: @contact.Email</span>
-            <span>Id: @contact.Id</span>
-            <span class="btn-group btn-group-xs">
-                <a href="@Url.Action("EditContact", new { id = contact.Id })" class="btn btn-default" title="Edit">
-                    <span class="glyphicon glyphicon-edit"></span>
-                </a>
-                <button data-toggle="modal" data-target="#@contact.Id" class="btn btn-default" title="Delete">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </button>
-            </span>
-        </p>
+        <div style="font-size: 1.5em;">
+            <p>
+                <span>Name: @contact.FirstName&nbsp;@contact.LastName</span>
+                <span>Phone: @contact.Phone</span>
+                <span>Email: @contact.Email</span>
+                <span>Id: @contact.Id</span>
+                <span class="btn-group btn-group-">
+                    <a href="@Url.Action("EditContact", new {id = contact.Id})" class="btn btn-primary btn-sm" title="Edit">
+                        <span class="glyphicon glyphicon-edit">Edit</span>
+                    </a>
+                    <button data-toggle="modal" data-target="#@contact.Id" class="btn btn-primary btn-sm" title="Delete">
+                        <span class="glyphicon glyphicon-trash">Delete</span>
+                    </button>
+                </span>
+            </p>
+        </div>
     }
 }
 else
