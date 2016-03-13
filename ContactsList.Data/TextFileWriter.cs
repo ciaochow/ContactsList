@@ -35,7 +35,7 @@ namespace ContactsList.Data
             File.WriteAllText(fileLocation, string.Empty);
             foreach (string line in allLines)
             {
-                if (!line.Contains(lineToDelete.ToUpper()))
+                if (!line.Contains(lineToDelete))
                 {
                     WriteToFile(line);
                 }

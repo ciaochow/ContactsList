@@ -37,5 +37,27 @@ namespace ContactsList.Controllers
             }
             return View(model);
         }
+
+        //public ActionResult RemoveContact(Contact model)
+        //{
+        //    return View(model);
+        //}
+
+
+        //[HttpPost]
+        //public ActionResult RemoveContact(int id)
+        //{
+        //    _repo.RemoveContact(id);
+        //    TempData["Message"] = "The contact has been deleted.";
+        //    return RedirectToAction("Index");
+        //}
+
+        [HttpPost]
+        public ActionResult RemoveContact(int id)
+        {
+            _repo.RemoveContact(id);
+            TempData["Message"] = "The contact has been deleted.";
+            return RedirectToAction("Index");
+        }
     }
 }
