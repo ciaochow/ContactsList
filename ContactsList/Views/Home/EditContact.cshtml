@@ -1,0 +1,33 @@
+﻿@model ContactsList.Model.Contact
+@{
+    ViewBag.Title = "EditContact";
+}
+
+<h2>Edit a Contact</h2>
+@using (Html.BeginForm("EditContact", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>First Name</label>
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+    </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+        @Html.HiddenFor(m => m.Id)
+        <br />
+        <div class="form-group">
+            <button class="btn btn-success btn-md">Save Changes</button>
+            <a href="@Url.Action("Index", "Home")" class="btn btn-danger btn-md">
+                Cancel
+            </a>
+        </div>
+}

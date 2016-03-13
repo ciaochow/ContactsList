@@ -30,7 +30,7 @@ namespace ContactsList.Data
                 contact.Email = columns[3];
                 allContacts.Add(contact);
             }
-            
+
             return allContacts;
         }
 
@@ -41,24 +41,32 @@ namespace ContactsList.Data
             return contact;
         }
 
-        
         public Contact RemoveContact(int id)
         {
             Contact contact = new Contact();
-             contact = AllContacts()[id];
-            ////contact = contacts[id];
-            
-            
+            contact = AllContacts()[id];
             string contacttodelete = ContactToString(contact);
             contactBook.DeleteFromFile(contacttodelete);
             return contact;
         }
 
+        public Contact EditContact(Contact model)
+        {
+            // first we delete the old contact
+            Contact contact = new Contact();
+            contact = AllContacts()[model.Id];
+            string contacttodelete = ContactToString(contact);
+            contactBook.DeleteFromFile(contacttodelete);
+
+            // next, we add in the updated contact
+            string contacttoedit = ContactToString(model);
+            contactBook.EditLineInFile(contacttoedit);
+            return contact;
+        }
+
         public string ContactToString(Contact contact)
         {
-
             return contact.FirstName + ',' + contact.LastName + ',' + contact.Phone + ',' + contact.Email;
-
         }
 
         public Contact StringToContact(string text)
@@ -71,6 +79,5 @@ namespace ContactsList.Data
             contact.Email = columns[3];
             return contact;
         }
-
     }
 }

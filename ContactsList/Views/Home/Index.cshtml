@@ -1,5 +1,4 @@
-﻿
-@model ContactsList.Models.ViewModels.ContactsListVm
+﻿@model ContactsList.Models.ViewModels.ContactsListVm
 @{
     ViewBag.Title = "Contacts List";
 }
@@ -29,10 +28,14 @@
             <span>Phone: @contact.Phone</span>
             <span>Email: @contact.Email</span>
             <span>Id: @contact.Id</span>
-
-            <button data-toggle="modal" data-target="#@contact.Id" class="btn btn-default" title="Delete">
-                <span class="glyphicon glyphicon-trash"></span>
-            </button>
+            <span class="btn-group btn-group-xs">
+                <a href="@Url.Action("EditContact", new { id = contact.Id })" class="btn btn-default" title="Edit">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </a>
+                <button data-toggle="modal" data-target="#@contact.Id" class="btn btn-default" title="Delete">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </span>
         </p>
     }
 }

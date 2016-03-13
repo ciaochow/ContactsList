@@ -41,5 +41,25 @@ namespace ContactsList.Data
                 }
             }
         }
+
+        public void EditLineInFile(string lineToEdit)
+        {
+            // first, we delete the line that we want to edit
+            string[] allLines = ReturnAllLines();
+            File.WriteAllText(fileLocation, String.Empty);
+            foreach (string line in allLines)
+            {
+                if (!line.Contains(lineToEdit))
+                {
+                    WriteToFile(line);
+                }
+            }
+
+            // next, we add the line back in with the newly updated information
+            using (StreamWriter w = File.AppendText(fileLocation))
+            {
+                w.WriteLine(lineToEdit);
+            }
+        }
     }
 }
