@@ -1,0 +1,32 @@
+﻿@model ContactsList.Model.Contact
+    @{
+        ViewBag.Title = "AddContact";
+    }
+
+    <h2>AddContact</h2>
+    @using (Html.BeginForm("AddContact", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label>First Name</label>
+            @Html.TextBoxFor(m => m.FirstName, null, new {placeholder = "Ex: John", @class = "form-control"})
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            @Html.TextBoxFor(m => m.LastName, null, new {placeholder = "Ex: Smith", @class = "form-control"})
+        </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            @Html.TextBoxFor(m => m.Phone, null, new {placeholder = "Ex: 1234567890", @class = "form-control"})
+        </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            @Html.TextBoxFor(m => m.Email, null, new {placeholder = "Ex: john@example.com", @class = "form-control"})
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success btn-md">Save Contact</button>
+            <a href="@Url.Action("Index", "Home")" class="btn btn-danger btn-md">
+                Cancel
+            </a>
+        </div>
+    }

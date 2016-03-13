@@ -43,12 +43,16 @@
   <ItemGroup>
     <Compile Include="ContactsListRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextFileWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContactsList.Model\ContactsList.Model.csproj">
       <Project>{fbdc9e49-ec2d-4463-a4a5-fab4dcc7793b}</Project>
       <Name>ContactsList.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="contactlist.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

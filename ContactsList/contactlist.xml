@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfContact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Contact>
+    <Id>1</Id>
+    <FirstName>John</FirstName>
+    <LastName>Smith</LastName>
+    <Phone>111-222-3333</Phone>
+    <Email>john@example.com</Email>
+  </Contact>
+  <Contact>
+    <Id>2</Id>
+    <FirstName>John</FirstName>
+    <LastName>Smith</LastName>
+    <Phone>111-222-3333</Phone>
+    <Email>john@example.com</Email>
+  </Contact>
+  <Contact>
+    <Id>3</Id>
+    <FirstName>John</FirstName>
+    <LastName>Smith</LastName>
+    <Phone>111-222-3333</Phone>
+    <Email>john@example.com</Email>
+  </Contact>
+</ArrayOfContact>

@@ -12,52 +12,30 @@ namespace ContactsList.Data
 {
     public class ContactsListRepo
     {
-        private string _filepath = System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/contactlist.xml");
-        public List<Contact> _contacts;
+        TextFileWriter contactBook = new TextFileWriter(@"..\..\Contacts\ContactBook.txt");
 
-        public void LoadAll()
+        public List<Contact> AllContacts()
         {
-            LoadFromDb();
-            if (_contacts == null)
-                _contacts = new List<Contact>();
-        }
-
-        public void Add(Contact contact)
-        {
-            int id = 0;
-            id = _contacts.Max(x => x.Id) + 1;
-            contact.Id = id;
-            _contacts.Add(contact);
-            SavetoXml();
-        }
-
-        private void LoadFromDb()
-        {
-            if (!File.Exists(_filepath))
+            List<Contact> allContacts = new List<Contact>();
+            string[] allLines = contactBook.ReturnAllLines();
+            foreach (string line in allLines)
             {
-                return;
+                string[] columns = line.Split(',');
+                Contact contact = new Contact();
+                contact.FirstName = columns[0];
+                contact.LastName = columns[1];
+                contact.Phone = columns[2];
+                contact.Email = columns[3];
+                allContacts.Add(contact);
             }
-
-            XmlSerializer x = new XmlSerializer(typeof(List<Contact>));
-            using (FileStream fs = new FileStream(_filepath, FileMode.Open))
-            {
-                XmlReader r = XmlReader.Create(fs);
-                _contacts = (List<Contact>)x.Deserialize(r);
-            }
+            return allContacts;
         }
 
-        public List<Contact> List()
+        public Contact AddContact(Contact contact)
         {
-            return _contacts;
-        }
-
-        private void SavetoXml()
-        {
-            XmlSerializer x = new XmlSerializer(_contacts.GetType());
-            using (TextWriter writer = new StreamWriter(_filepath))
-            {
-                x.Serialize(writer, _contacts);
-            }
+            string newcontact = contact.FirstName + ',' + contact.LastName + ',' + contact.Phone + ',' + contact.Email;
+            contactBook.WriteToFile(newcontact);
+            return contact;
         }
     }
 }

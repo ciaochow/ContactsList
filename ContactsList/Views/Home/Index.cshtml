@@ -4,7 +4,11 @@
     ViewBag.Title = "Contacts List";
 }
 <br />
-<br/>
+<br />
+<a href="@Url.Action("AddContact", "Home")" class="btn btn-danger btn-md pull-right">
+    Add
+</a>
+<br />
 @if (Model != null)
 {
     // List all contacts
@@ -15,11 +19,10 @@
         </div>
     }
 
-
     foreach (var contact in Model.Contacts)
     {
         <p>
-            <span>Name: @contact.FirstName</span>
+            <span>Name: @contact.FirstName&nbsp;@contact.LastName</span>
             <span>Phone: @contact.Phone</span>
             <span>Email: @contact.Email</span>
         </p>
