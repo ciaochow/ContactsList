@@ -7,11 +7,11 @@
     @using (Html.BeginForm("AddContact", "Home", FormMethod.Post))
     {
         <div class="form-group">
-            <label>First Name (2-25 chars)</label>@Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+            <label>First Name (Max 25 chars)</label>@Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
             @Html.TextBoxFor(m => m.FirstName, null, new {placeholder = "Ex: John", @class = "form-control"})
         </div>
         <div class="form-group">
-            <label>Last Name (2-25 chars)</label>@Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+            <label>Last Name (Max 25 chars)</label>@Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
             @Html.TextBoxFor(m => m.LastName, null, new {placeholder = "Ex: Smith", @class = "form-control"})
         </div>
         <div class="form-group">

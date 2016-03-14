@@ -11,12 +11,14 @@ namespace ContactsList.Model
     {
         public int Id { get; set; }
 
+        [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Use A-Z letters only please")]
         [Required(ErrorMessage = " - Cannot be blank.")]
-        [RegularExpression(@"^.{2,}$", ErrorMessage = "Minimum 2 characters required")]
+        //[RegularExpression(@"^.{2,}$", ErrorMessage = "Minimum 2 characters required")]
         [StringLength(25, ErrorMessage = "Maximum 25 characters exceeded")]
         public string FirstName { get; set; }
 
-        [RegularExpression(@"^.{2,}$", ErrorMessage = "Minimum 2 characters required")]
+        [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Use A-Z letters only please")]
+        //[RegularExpression(@"^.{2,}$", ErrorMessage = "Minimum 2 characters required")]
         [StringLength(25, ErrorMessage = "Maximum 25 characters exceeded")]
         [Required(ErrorMessage = " - Cannot be blank.")]
         public string LastName { get; set; }
