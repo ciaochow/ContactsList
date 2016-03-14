@@ -4,10 +4,10 @@
 }
 <br />
 <br />
-<a href="@Url.Action("AddContact", "Home")" class="btn btn-danger btn-md pull-right">
-    Add
-</a>
-<br />
+    <a href="@Url.Action("AddContact", "Home")" class="btn btn-danger btn-md">
+        Add
+    </a>
+
 @if (Model != null)
 {
     // List all contacts
@@ -16,31 +16,82 @@
         <div>
             <h3>Contacts: @Model.Contacts.Count()</h3>
         </div>
-        <br/>
+        <br />
     }
     if (Model.Contacts.Count == 0)
     {
         <h4>There are currently no contacts.</h4>
     }
-    foreach (var contact in Model.Contacts)
-    {
-        <div style="font-size: 1.5em;">
-            <p>
-                <span>Name: @contact.FirstName&nbsp;@contact.LastName</span>
-                <span>Phone: @contact.Phone</span>
-                <span>Email: @contact.Email</span>
-                <span>Id: @contact.Id</span>
-                <span class="btn-group btn-group-">
-                    <a href="@Url.Action("EditContact", new {id = contact.Id})" class="btn btn-primary btn-sm" title="Edit">
-                        <span class="glyphicon glyphicon-edit">Edit</span>
-                    </a>
-                    <button data-toggle="modal" data-target="#@contact.Id" class="btn btn-primary btn-sm" title="Delete">
-                        <span class="glyphicon glyphicon-trash">Delete</span>
-                    </button>
-                </span>
-            </p>
-        </div>
-    }
+
+    <table class="table" style="font-size: 24px;">
+        <thead>
+            <tr>
+                <th>
+                    FirstName
+                </th>
+                <th>
+                    LastName
+                </th>
+                <th>
+                    Phone Number
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Options
+                </th>
+            </tr>
+        </thead>
+        <tbody style="font-size: 20px;">
+            @foreach (var item in Model.Contacts)
+            {
+                <tr>
+                    <td>
+                        @item.FirstName
+                    </td>
+                    <td>
+                        @item.LastName
+                    </td>
+                    <td>
+                        @item.Phone
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        <a href="@Url.Action("EditContact", new {id = item.Id})" class="btn btn-primary btn-sm" title="Edit">
+                            <span class="glyphicon glyphicon-edit">Edit</span>
+                        </a>
+                        |
+                        <button data-toggle="modal" data-target="#@item.Id" class="btn btn-primary btn-sm" title="Delete">
+                            <span class="glyphicon glyphicon-trash">Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    @*foreach (var contact in Model.Contacts)
+        {
+            <div style="font-size: 1.5em;">
+                <p>
+                    <span>Name: @contact.FirstName&nbsp;@contact.LastName</span>
+                    <span>Phone: @contact.Phone</span>
+                    <span>Email: @contact.Email</span>
+                    <span>Id: @contact.Id</span>
+                    <span class="btn-group btn-group-">
+                        <a href="@Url.Action("EditContact", new {id = contact.Id})" class="btn btn-primary btn-sm" title="Edit">
+                            <span class="glyphicon glyphicon-edit">Edit</span>
+                        </a>
+                        <button data-toggle="modal" data-target="#@contact.Id" class="btn btn-primary btn-sm" title="Delete">
+                            <span class="glyphicon glyphicon-trash">Delete</span>
+                        </button>
+                    </span>
+                </p>
+            </div>
+        }*@
 }
 else
 {
