@@ -54,7 +54,7 @@
                         @item.LastName
                     </td>
                     <td>
-                        @item.Phone
+                        @item.Phone.Substring(0,3)-@item.Phone.Substring(3,3)-@item.Phone.Substring(6)
                     </td>
                     <td>
                         @item.Email
